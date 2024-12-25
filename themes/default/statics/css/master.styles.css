@@ -19067,6 +19067,9 @@ body.cl-app-chat
   div.flex-item-left {
   flex: 1;
   margin-right: var(--cl-primary-offset-size);
+  display: flex;
+  justify-items: center;
+  gap: 5px;
 }
 
 body.cl-app-chat
