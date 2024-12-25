@@ -51520,28 +51520,6 @@ body.cl-app-conversation
   div.conversation--search-form-wrapper
   form
   div.keyword-input
-  input {
-  border: 1px solid var(--smc-main-border-color);
-  background: var(--smc-main-ibg-color);
-  border-radius: 10em;
-  padding: 0 0 3px 40px;
-  height: 40px;
-  font-size: 13px;
-  color: var(--smc-main-text-color);
-  width: 100%;
-}
-
-body.cl-app-conversation
-  main.main-content-container
-  div.main-content-container-inner
-  div.timeline-container-inner
-  div.timeline-container
-  div.conversation-app-body
-  div.vue-app-body
-  div.vue-app-body-inner
-  div.conversation--search-form-wrapper
-  form
-  div.keyword-input
   input:active,
 body.cl-app-conversation
   main.main-content-container
@@ -59094,27 +59072,6 @@ body.cl-app-chat
   div.chat-search-form-wrapper
   form
   div.keyword-input
-  input {
-  border: 1px solid var(--smc-main-border-color);
-  background: var(--smc-main-ibg-color);
-  border-radius: 10em;
-  padding: 0 0 3px 50px;
-  height: 40px;
-  width: 100%;
-  font-size: 15px;
-  color: var(--smc-main-text-color);
-}
-
-body.cl-app-chat
-  main.main-content-container
-  div.main-content-container-inner
-  div.timeline-container
-  div.timeline-container-inner
-  div.vue-app-body
-  div.vue-app-body-inner
-  div.chat-search-form-wrapper
-  form
-  div.keyword-input
   input:active,
 body.cl-app-chat
   main.main-content-container
@@ -62355,25 +62312,6 @@ body.cl-app-search
 
 .flex-item.dropdown-item-icon svg.booka {
   display: none;
-}
-
-body.cl-app-search
-  main.main-content-container
-  div.main-content-container-inner
-  div.timeline-container
-  div.vue-app-body
-  div.main--search-form-wrapper
-  form
-  div.keyword-input
-  input {
-  border: 1px solid var(--smc-main-border-color);
-  background: var(--smc-main-ibg-color);
-  border-radius: 10em;
-  padding: 0 0 3px 50px;
-  height: 40px;
-  width: 100%;
-  font-size: 15px;
-  color: var(--smc-main-text-color);
 }
 
 body.cl-app-search

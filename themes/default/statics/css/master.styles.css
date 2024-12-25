@@ -2063,7 +2063,7 @@ body
   form.timeline-searchbar__form
   div.keyword-input
   input {
-  border: 0px solid var(--smc-main-border-color);
+  border: 2px solid transparent;
   background: var(--smc-main-ibg-color);
   border-radius: 1em;
   padding: 3px 0 3px 50px;
