@@ -121,15 +121,7 @@
 						</div>
 					</div>
 				</div>
-				<?php if (not_empty($cl['li']['about'])): ?>
-					<div class="text-sm">
-						<?php echo $cl['li']['about']; ?>
 
-						<?php if (not_empty($cl['li']['website'])): ?>
-							| <?php echo cl_html_el("a", $cl['li']['website'], array("href" => $cl['li']['website'], "target" => "_blank", "class" => "inline-link")); ?>
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
 
 				<?php if (not_empty($cl['li']['common_follows'])): ?>
 					<div class="user-data__common">
