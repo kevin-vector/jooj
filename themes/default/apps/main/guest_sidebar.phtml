@@ -27,6 +27,22 @@
 				</div>
 			</form>
 		</div>
+		<?php if ($cl['pn'] == "symbol"): ?>
+			<?php if ($cl['symbol']['fetch_from'] === 'TV'): ?>
+				<div class="topical-posts trading_widget_style_p1">
+					<div id="tradingview-widget-container" class="tradingview-widget-container">
+						<div class="tradingview-widget-container__widget"></div>
+						<div id="tradingview-widget"></div>
+						<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+					</div>
+				</div>
+			<?php elseif($cl['symbol']['fetch_from'] === 'CG') : ?>				
+				<div class="topical-posts trading_widget_style_p1">
+					<script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
+					<gecko-coin-price-chart-widget locale="en" transparent-background="true" <?php if($cl['display_set']['background'] != 'default') echo 'dark-mode="true"'; ?> coin-id="<?php echo strtolower($cl['prof_user']['symbol_fetch_gecko'])?>" initial-currency="usd"></gecko-coin-price-chart-widget>
+				</div>
+			<?php endif ?>
+		<?php endif ?>
 		<div class="sidebar_login">
 			<div class="social_login">
 				<h2>
