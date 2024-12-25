@@ -51,11 +51,11 @@
 					lastScrollTop = y;
 				});
 
-				setInterval(function() {
-					if (SMColibri.curr_pn == "symbol") {
-						_self_.timeline.update();
-					}
-				}, (60 * 1000));
+				// setInterval(function() {
+				// 	if (SMColibri.curr_pn == "symbol") {
+				// 		_self_.timeline.update();
+				// 	}
+				// }, (60 * 1000));
 			},
 			timeline: {
 				loading: false,
@@ -95,9 +95,9 @@
 						}).always(function() {
 							_self_.loading = false;
 
-							delay(function() {
-								SMColibri.fix_sidebars();
-							}, 50);
+							// delay(function() {
+							// 	SMColibri.fix_sidebars();
+							// }, 50);
 						});
 					}
 				},
