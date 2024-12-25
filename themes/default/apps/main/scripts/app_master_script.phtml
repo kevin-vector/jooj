@@ -570,10 +570,15 @@ _smc.userlbox.curr_el = false;
 									_smc.errorMSG();
 								}
 								else {
-									setTimeout(function() {
-								location.reload(); 
-							}, 1200);
-									
+									var hp_tl_app = $('div[data-app="symbol"]');
+
+									hp_tl_app.find('div[data-an="entry-list"]').find('div[data-list-item="{0}"]'.format(id)).slideUp(200, function () {
+										$(this).remove();
+
+										if (hp_tl_app.find('div[data-an="entry-list"]').find('div[data-list-item]').length < 1) {
+											$(window).reloadPage(50);
+										}
+									});									
 								}
 							}).always(function () {
 								$("div.confirm-actions-modal").modal("hide");
