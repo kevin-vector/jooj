@@ -162,13 +162,18 @@
                         </p>
                     </div>
                     <input type="hidden" class="d-none" value="<?php echo fetch_or_get($cl['csrf_token'],'none'); ?>" name="hash">
-                    <div class="form-group no-mb" style="max-width: 150px; float:right;">
-                    	<button v-if="submitting != true" type="submit" class="btn btn-block btn-custom main-inline lg">
+                    <div class="form-group" style="display: flex; justify-content: flex-end;">
+                    	<button v-if="submitting != true" type="submit" class="btn btn-block btn-custom main-inline lg" style="max-width: 150px;">
 	                        <?php echo cl_translate("Save changes"); ?>
 	                    </button>
 	                    <button v-else disabled="true" type="button" class="btn btn-block btn-custom main-inline lg">
 	                        <?php echo cl_translate("Please wait"); ?>
 	                    </button>
+                    </div>
+                    <div class="form-group">
+                        <p class="form-info-label">
+                            <?php echo cl_translate("Want to update your email notification settings?"); ?>&nbsp;<a style="color: var(--smc-main-uiel-color-darken-5)" href="<?php echo cl_link("settings/email_notifs"); ?>"><?php echo cl_translate("Click here"); ?></a>
+                        </p>
                     </div>
 				</form>
 			</div>
