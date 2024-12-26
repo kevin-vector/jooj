@@ -5115,7 +5115,7 @@ body
   padding-bottom: 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 body
@@ -5130,7 +5130,7 @@ body
   div.post-list-advert__header
   div.post-list-advert__sponsor {
   text-align: left;
-  width: 73%;
+  /* width: 73%; */
   margin-left: 20px;
   vertical-align: top;
   line-height: 20px;
@@ -5289,7 +5289,7 @@ body
   div.post-list-advert
   div.post-list-advert__body
   div.post-list-advert__image {
-  width: 100%;
+  width: fit-content;
   border: 1px solid var(--smc-main-border-color);
   display: block;
   border-radius: var(--smc-main-border-rad1);
@@ -5297,6 +5297,7 @@ body
   background: #e6ecf0;
   position: relative;
   position: static;
+  margin-left: 10px;
 }
 
 body
@@ -5327,7 +5328,8 @@ body
   div.post-list-advert__image
   a.fbox-media
   img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 500px;
 }
 
 body

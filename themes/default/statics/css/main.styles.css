@@ -22,6 +22,16 @@
   background-color: var(--smc-main-bg-color-2) !important;
 }
 
+.guest-bottom-title {
+    color: var(--smc-main-text-color);
+    font-weight: 700;
+    line-height: 35px;
+    font-size: 30px;
+    overflow-wrap: break-word;
+    margin: 10px;
+    width: 250px;
+}
+
 .verified-badge-mobile {
   position: relative; /* Positioning context */
   margin: 0; /* Combined margin properties */
