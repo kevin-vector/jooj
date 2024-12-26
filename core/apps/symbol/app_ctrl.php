@@ -128,9 +128,6 @@ function cl_get_profile_posts($symbol_id = false, $limit = 30, $offset = false) 
             }
         }
     }
-    usort($data, function($a, $b) {
-        return $b['id'] <=> $a['id']; // Sort in ascending order
-    });
     return $data;
 }
 
@@ -253,9 +250,6 @@ function cl_get_profile_posts_trending($symbol_id = false, $limit = 30, $offset 
             }
         }
     }
-    usort($data, function($a, $b) {
-        return $b['id'] <=> $a['id']; // Sort in ascending order
-    });
     return $data;
 }
 
