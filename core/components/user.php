@@ -1801,6 +1801,19 @@ function cl_notify_user($data = array()) {
                     "ad_approval" => cl_translate('Congratulations! Your add has been approved. Click on the link below to learn more'),
                     "comment" => cl_translate(' <p>{@message@}</p> User <b>@{@user_name@}</b> sent you a message. Click on the link below to learn more', array("user_name" => $me["name"], "message" => array_key_exists("message", $data) ? $data["message"] : ""))
                 ),
+                "button_text" => array(
+                    "verified" => cl_translate('Visit my account'),
+                    "reply" => cl_translate('SEE PUBLICATION'),
+                    "subscribe" => cl_translate('Visit my account'),
+                    "subscribe_request" => cl_translate('Visit my account'),
+                    "subscribe_accept" => cl_translate('Visit my account'),
+                    "mention" => cl_translate('SEE PUBLICATION'),
+                    "like" => cl_translate('SEE PUBLICATION'),
+                    "repost" => cl_translate('SEE PUBLICATION'),
+                    "visit" => cl_translate('Visit my account'),
+                    "ad_approval" => cl_translate('SEE AD'),
+                    "comment" => cl_translate('SEE MESSAGE')
+                ),
             );
             if (in_array($data['subject'], array('reply', 'repost', 'like', 'mention'))) {
                 $cl['enotif_data']['url'] = cl_link(cl_strf("thread/%d", $data['entry_id']));
