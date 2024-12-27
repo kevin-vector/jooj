@@ -18,6 +18,10 @@
   display: flex;
 }
 
+.collapse.show {
+  visibility: visible;
+}
+
 .bg-origin {
   background-color: var(--smc-main-bg-color-2) !important;
 }
