@@ -84,7 +84,7 @@
 								<?php echo cl_template('timeline/post'); ?>
 						<?php endforeach; ?>
 					</div>
-					<?php if (count($cl["feed_trending"]) == 30): ?>
+					<?php if (count($cl["feed_trending"]) >= 30): ?>
 							<div class="timeline-data-loader">
 								<button class="btn btn-custom main-outline lg" data-an="load-more">
 									<?php echo cl_translate("Show more"); ?>
