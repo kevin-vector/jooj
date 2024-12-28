@@ -1747,6 +1747,11 @@ var pubbox_form_app_mixin = Object({
 		$("#add_new_post_reply").on('hidden.bs.modal', this.cancel_post);
 		$("#add_new_post_repost").on('hidden.bs.modal', this.cancel_post);
 		$("#add_new_post_repost_symbol").on('hidden.bs.modal', this.cancel_post);
+		$("#add_new_post").on('show.bs.modal', this.cancel_post);
+		$("#add_new_post_reply").on('show.bs.modal', this.cancel_post);
+		$("#add_new_post_repost").on('show.bs.modal', this.cancel_post);
+		$("#add_new_post_repost_symbol").on('show.bs.modal', this.cancel_post);
+		$(".main-timeline-pubbox-wrapper").on('load', this.cancel_post);
 		
 		window.addEventListener('beforeunload', this.cancel_post);
 
