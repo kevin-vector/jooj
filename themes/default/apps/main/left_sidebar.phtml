@@ -125,36 +125,21 @@
 								</a>
 							</span>
 						</li>
-						<?php if ($cl['config']['blue_account_system_status'] == 'off'): ?>
-							<li data-navitem="trending" onclick="window.location.href='<?php echo ($me['url']); ?>/watching'" class="sidebar-v-nav-item <?php if ($cl['pn'] == 'connections') {	/* edited by kevin change into button with full width */
-								echo ('active');
-							} ?>">
-								<span class="icon">
-									<?php echo cl_ikon('activity'); ?>
-								</span>
-								<span class="nav-item-holder">
-									<a href="<?php echo ($me['url']); ?>/watching" data-spa="true">
-										Watchlist
-									</a>
-								</span>
-							</li>
-						<?php endif; ?>
+						<li data-navitem="trending" onclick="window.location.href='<?php echo ($me['url']); ?>/watching'" class="sidebar-v-nav-item <?php if ($cl['pn'] == 'connections') {	/* edited by kevin change into button with full width */
+							echo ('active');
+						} ?>">
+							<span class="icon">
+								<?php echo cl_ikon('activity'); ?>
+							</span>
+							<span class="nav-item-holder">
+								<a href="<?php echo ($me['url']); ?>/watching" data-spa="true">
+									Watchlist
+								</a>
+							</span>
+						</li>
 						<!-- Blue Account -->
 						<?php if ($cl['config']['blue_account_system_status'] == 'on'): ?>
-							<?php if ($me["is_blue"] == 1): ?>
-								<li data-navitem="trending" onclick="window.location.href='<?php echo ($me['url']); ?>/watching'" class="sidebar-v-nav-item <?php if ($cl['pn'] == 'connections') {	/* edited by kevin change into button with full width */
-									echo ('active');
-								} ?>">
-									<span class="icon">
-										<?php echo cl_ikon('activity'); ?>
-									</span>
-									<span class="nav-item-holder">
-										<a href="<?php echo ($me['url']); ?>/watching" data-spa="true">
-											Watchlist
-										</a>
-									</span>
-								</li>
-							<?php else: ?>
+							<?php if ($me["is_blue"] == 0): ?>
 								<li data-navitem="blue_account" onclick="window.location.href='<?php echo cl_link('blue_account'); ?>'" class="sidebar-v-nav-item <?php if ($cl['pn'] == 'blue_account') {	/* edited by kevin change into button with full width */
 									echo ('active');
 								} ?>">
