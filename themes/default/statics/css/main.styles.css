@@ -29,8 +29,8 @@
 .guest-bottom-title {
     color: var(--smc-main-text-color);
     font-weight: 700;
-    line-height: 35px;
-    font-size: 30px;
+    line-height: 30px;
+    font-size: 25px;
     overflow-wrap: break-word;
     margin: 10px;
     width: 250px;
