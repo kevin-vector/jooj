@@ -110,11 +110,6 @@ if (empty($cl['prof_user']['is_blocked']) && empty($cl['prof_user']['me_blocked'
     // Combine posts from author and mentions
     $merged_posts = array_merge((array)$cl["user_posts"], (array)$cl["user_mentions"]);
 
-    // Sort posts by time in descending order
-    usort($merged_posts, function($a, $b) {
-        return strtotime($b['time']) - strtotime($a['time']);
-    });
-
     // Remove duplicate posts
     $unique_posts = [];
     $post_ids = [];
