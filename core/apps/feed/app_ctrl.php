@@ -8,7 +8,7 @@
 # @ JOOJ Talk - The Ultimate Modern Social Media Sharing Platform           @
 # @ Copyright (c) 2020 - 2023 JOOJ Talk. All rights reserved.               @
 # @*************************************************************************@
-function cl_get_guest_feed($offset = false, $limit = 10) {
+function cl_get_guest_feed($offset = false, $limit = 30) {
 	global $db, $cl, $me;
 
 	$data        = array();

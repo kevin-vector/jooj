@@ -9,7 +9,7 @@
 	</div>
 </div>
 
-<div class="timeline-container" data-app="homepage">
+<div class="timeline-container" data-app="feed">
 	<div class="timeline-header symbol_header" data-el="tl-header">
 		<?php echo cl_template('common/bot_line'); ?>
 		<div>
@@ -264,44 +264,5 @@
 	})
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-	"use strict";
 
-	var offset = 30;
-
-	jQuery(document).ready(function ($) {
-		var _app = $('div[data-app="homepage"]');
-		var feed_ls = _app.find('[data-an="entry-list"]');
-
-		_app.find('button[data-an="load-more"]').on('click', function (event) {
-			event.preventDefault();
-
-			var _self = $(this);
-
-
-			$.ajax({
-				url: "<?php echo cl_link("native_api/home/load_more"); ?>",
-				type: 'GET',
-				dataType: 'json',
-				data: {
-					offset: offset,
-				},
-				beforeSend: function () {
-					_self.attr('disabled', 'true').text("<?php echo cl_translate("Please wait"); ?>");
-				}
-			}).done(function (data) {
-				if (data.status == 200) {
-					feed_ls.append(data.html);
-
-					_self.removeAttr('disabled').text("<?php echo cl_translate("Show more"); ?>");
-
-					offset += 30;
-				}
-
-				else {
-					_self.text("<?php echo cl_translate("That is all for now!"); ?>");
-				}
-			});
-		});
-	});
-</script>
+<?php echo cl_template('feed/scripts/app_master_script'); ?>
