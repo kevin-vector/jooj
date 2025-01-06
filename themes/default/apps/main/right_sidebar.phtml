@@ -126,7 +126,7 @@
 							if ($count >= 5) break;
 							$symbol = $row['symbol'];
 							$db        = $db->where('username', $symbol);
-							$symbol_data = $db->getOne(T_SYMBOLS, 'avatar, id, fname');
+							$symbol_data = $db->getOne(T_SYMBOLS, 'avatar, id, fname, posts');
 							if (empty($symbol_data)) { // Check if data is found
 								continue;
 							}
@@ -140,7 +140,7 @@
 								<img src="<?php echo $symbol_data['avatar']; ?>" style="height: 17px; border-radius:50%; margin-right: 2px;" alt="">
 								<b>$</b>
 								<strong><?php echo ($row['symbol']); ?></strong>
-								<span><?php echo (strlen($symbol_data['fname']) > 12 ? substr($symbol_data['fname'], 0, 12).'...' : $symbol_data['fname']).' | '.$row['posts']; ?> <?php echo cl_translate("Posts"); ?></span>
+								<span><?php echo (strlen($symbol_data['fname']) > 12 ? substr($symbol_data['fname'], 0, 12).'...' : $symbol_data['fname']).' | '.$symbol_data['posts']; ?> <?php echo cl_translate("Posts"); ?></span>
 							</a>
 							<?php if ($symbol_data['is_following']): ?>
 								<button onclick="SMColibri.req_watch(this);" data-user-name="<?php echo($row['symbol']); ?>" class="right-sidebar-flex-button" data-action="unfollow" data-id="<?php echo($symbol_data['id']); ?>">
