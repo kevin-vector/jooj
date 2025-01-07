@@ -9,7 +9,12 @@
 # @ Copyright (c) 2020 - 2023 JOOJ Talk. All rights reserved.               @
 # @*************************************************************************@
 
-if ($action == 'load_more') {
+if (empty($cl["is_logged"])) {
+    $data['status'] = 400;
+    $data['error']  = 'Invalid access token';
+}
+
+else if ($action == 'load_more') {
 
     require_once(cl_full_path("core/apps/home/app_ctrl.php"));
 
@@ -29,6 +34,9 @@ if ($action == 'load_more') {
 
             $data['status'] = 200;
             $data['html']   = implode("", $html_arr);
+        }
+        else {
+            $data['status'] = 404;
         }
     }
     

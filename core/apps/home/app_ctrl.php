@@ -12,6 +12,10 @@
 function cl_get_timeline_feed($limit = false, $offset = false, $onset = false) {
 	global $db, $cl, $me;
 
+	if (empty($cl["is_logged"])) {
+		return false;
+	}
+
 	$data           = array();
 	$sql            = cl_sqltepmlate("apps/home/sql/fetch_timeline_feed",array(
 		"t_posts"   => T_POSTS,
