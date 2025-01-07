@@ -6,7 +6,7 @@ SELECT pubs.id, pubs.likes_count, pubs.replys_count, pubs.reposts_count, posts.c
 
     LEFT JOIN `<?php echo($data['t_posts']); ?>` posts ON pubs.id=posts.publication_id
 
-    WHERE pubs.text LIKE "%$<?php echo($data['symbol_name']); ?>%"
+    WHERE pubs.text LIKE "%<?php echo($data['symbol_name']); ?>%"
 
     <?php if($data['offset']): ?>
         AND pubs.id < <?php echo($data['offset']); ?>
