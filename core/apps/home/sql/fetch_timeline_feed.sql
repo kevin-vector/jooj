@@ -10,19 +10,17 @@
 @*************************************************************************@
  */
 
-SELECT * FROM `<?php echo($data['t_pubs']); ?>` pubs
-
-INNER JOIN (SELECT `type`, comment_on, publication_id from `<?php echo($data['t_posts']); ?>`
-				union all 
-				SELECT `type`, comment_on, publication_id from cl_posts_symbol)  AS merged_data on pubs.id = merged_data.publication_id
+SELECT posts.`id` as offset_id, posts.`publication_id`, posts.`type`, posts.`user_id`, posts.`comment_on` FROM `<?php echo($data['t_posts']); ?>` posts		/* edited by kevin to fetch comment on */
+	
+	INNER JOIN `<?php echo($data['t_pubs']); ?>` pubs ON posts.`publication_id` = pubs.`id`
 
 	WHERE pubs.`status` = 'active'
 
-	AND (`user_id` = <?php echo($data['user_id']); ?> OR `user_id` IN (SELECT `following_id` FROM `<?php echo($data['t_conns']); ?>` WHERE `follower_id` = <?php echo($data['user_id']); ?> AND `status` = "active") OR `priv_wcs` = "everyone")
+	AND (posts.`user_id` = <?php echo($data['user_id']); ?> OR posts.`user_id` IN (SELECT `following_id` FROM `<?php echo($data['t_conns']); ?>` WHERE `follower_id` = <?php echo($data['user_id']); ?> AND `status` = "active") OR `priv_wcs` = "everyone")
 
-	AND (`publication_id` NOT IN (SELECT `post_id` FROM `<?php echo($data['t_reports']); ?>` WHERE `user_id` = <?php echo($data['user_id']); ?>))
+	AND (posts.`publication_id` NOT IN (SELECT `post_id` FROM `<?php echo($data['t_reports']); ?>` WHERE `user_id` = <?php echo($data['user_id']); ?>))
 
-	ORDER BY `time` DESC
+	ORDER BY posts.`time` DESC
 
 <?php if($data['limit']): ?>
 	LIMIT <?php echo($data['limit']); ?>

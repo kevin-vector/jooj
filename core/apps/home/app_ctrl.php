@@ -34,7 +34,7 @@ function cl_get_timeline_feed($limit = false, $offset = false, $onset = false) {
 			
 
 			if (not_empty($post_data) && in_array($post_data['status'], array('active'))) {
-				// $post_data['offset_id']   = $row['offset_id'];
+				$post_data['offset_id']   = $row['offset_id'];
 				$post_data['is_repost']   = (($row['type'] == 'repost') ? true : false);
 				$post_data['is_quote']   = (($row['type'] == 'quote') ? true : false);		/* edited by kevin to quote comment */
 				$post_data['is_reposter'] = false;
