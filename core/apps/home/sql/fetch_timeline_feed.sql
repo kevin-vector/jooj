@@ -18,10 +18,6 @@ INNER JOIN (SELECT `type`, comment_on, publication_id from `<?php echo($data['t_
 
 	WHERE pubs.`status` = 'active'
 
-	AND (`user_id` = <?php echo($data['user_id']); ?> OR `user_id` IN (SELECT `following_id` FROM `<?php echo($data['t_conns']); ?>` WHERE `follower_id` = <?php echo($data['user_id']); ?> AND `status` = "active"))
-
-	AND (`publication_id` NOT IN (SELECT `post_id` FROM `<?php echo($data['t_reports']); ?>` WHERE `user_id` = <?php echo($data['user_id']); ?>))
-
 	ORDER BY `time` DESC
 
 <?php if($data['limit']): ?>
