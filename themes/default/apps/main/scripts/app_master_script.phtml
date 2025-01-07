@@ -567,7 +567,7 @@ _smc.userlbox.curr_el = false;
 								data: { id: id },
 							}).done(function (data) {
 								if (data.status != 200) {
-									_smc.delete_post(id);
+									_smc.errorMSG();
 								}
 								else {
 									var hp_tl_app = $('div[data-app="symbol"]');
