@@ -1804,8 +1804,8 @@ function cl_notify_user($data = array()) {
                 "button_text" => array(
                     "verified" => cl_translate('Visit my account'),
                     "reply" => cl_translate('SEE PUBLICATION'),
-                    "subscribe" => cl_translate('Visit my account'),
-                    "subscribe_request" => cl_translate('Visit my account'),
+                    "subscribe" => cl_translate('VISIT FOLLOWER ACCOUNT'),
+                    "subscribe_request" => cl_translate('VISIT REQUEST LIST'),
                     "subscribe_accept" => cl_translate('Visit my account'),
                     "mention" => cl_translate('SEE PUBLICATION'),
                     "like" => cl_translate('SEE PUBLICATION'),
@@ -1815,6 +1815,11 @@ function cl_notify_user($data = array()) {
                     "comment" => cl_translate('SEE MESSAGE')
                 ),
             );
+            
+            if (in_array($data['subject'], array('subscribe_request'))) {
+                $cl['enotif_data']['url'] = cl_link(cl_strf("%s/follow_requests", $me['name']));
+            }
+
             if (in_array($data['subject'], array('reply', 'repost', 'like', 'mention'))) {
                 $cl['enotif_data']['url'] = cl_link(cl_strf("thread/%d", $data['entry_id']));
             }

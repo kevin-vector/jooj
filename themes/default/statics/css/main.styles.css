@@ -37157,36 +37157,6 @@ body
   margin-left: 10px;
 }
 
-#forgotModal .close:hover,
-#signupModal .close:hover,
-#loginModal .close:hover {
-  background-color: rgb(207, 217, 222);
-  border-radius: 999px;
-  width: 34px;
-  height: 34px;
-}
-#forgotModal .close,
-#signupModal .close,
-#loginModal .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 34px;
-  height: 34px;
-}
-#forgotModal .btn-close,
-#signupModal .btn-close,
-#loginModal .btn-close {
-  float: left;
-  position: absolute;
-  margin: 1px;
-}
-
-#forgotModal .modal-header,
-#signupModal .modal-header,
-#loginModal .modal-header {
-  border-bottom: none;
-}
 .follow-suggestion__placeholder {
   line-height: 30px;
 }
@@ -37314,13 +37284,6 @@ body.modal-open {
     line-height: 16px;
   }
 
-  #forgotModal .modal-content,
-  #signupModal .modal-content,
-  #loginModal .modal-content {
-    height: auto;
-    min-height: 100%;
-    border-radius: 0px !important;
-  }
   .r-o96wvk {
     display: none;
   }
