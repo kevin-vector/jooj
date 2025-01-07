@@ -1817,7 +1817,7 @@ function cl_notify_user($data = array()) {
             );
             
             if (in_array($data['subject'], array('subscribe_request'))) {
-                $cl['enotif_data']['url'] = cl_link(cl_strf("%s/follow_requests", $me['username']));
+                $cl['enotif_data']['url'] = cl_link(cl_strf("%s/follow_requests", $cl['enotif_user']['username']));
             }
 
             if (in_array($data['subject'], array('reply', 'repost', 'like', 'mention'))) {
