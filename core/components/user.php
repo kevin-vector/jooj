@@ -1773,7 +1773,7 @@ function cl_notify_user($data = array()) {
                 "url" => cl_link($me['username']),
                 "subject" => $data['subject'],
                 "user_avatar" => $me['avatar'],
-                "user_name" => $me['username'],
+                "user_name" => $me['name'],
                 "email_logo" => $cl['config']['site_logo'],
                 "title" => array(
                     "verified" => cl_translate('Your verification request has been accepted'),
@@ -1790,16 +1790,16 @@ function cl_notify_user($data = array()) {
                 ),
                 "notif_text" => array(
                     "verified" => cl_translate('Congratulations! Your account has been successfully verified. Click on the link below to learn more'),
-                    "reply" => cl_translate('User <b>@{@user_name@}</b> replied to your post. Click on the link below to learn more', array("user_name" => $me["name"])),
-                    "subscribe" => cl_translate('User <b>@{@user_name@}</b> started following you. Click on the link below to learn more', array("user_name" => $me["name"])),
-                    "subscribe_request" => cl_translate('User <b>@{@user_name@}</b> wants to follow you. Click on the link below to learn more', array("user_name" => $me["name"])),
-                    "subscribe_accept" => cl_translate('User <b>@{@user_name@}</b> accepted your follow request. Click on the link below to learn more', array("user_name" => $me["name"])),
-                    "mention" => cl_translate('User <b>@{@user_name@}</b> mentioned you in a post.', array("user_name" => $me["name"])),
-                    "like" => cl_translate('User <b>@{@user_name@}</b> liked your post.', array("user_name" => $me["name"])),
-                    "repost" => cl_translate('User <b>@{@user_name@}</b> shared your publication.', array("user_name" => $me["name"])),
-                    "visit" => cl_translate('User <b>@{@user_name@}</b> visited your profile.', array("user_name" => $me["name"])),
+                    "reply" => cl_translate('User <b>@{@user_name@}</b> replied to your post. Click on the link below to learn more', array("user_name" => $me["username"])),
+                    "subscribe" => cl_translate('User <b>@{@user_name@}</b> started following you. Click on the link below to learn more', array("user_name" => $me["username"])),
+                    "subscribe_request" => cl_translate('User <b>@{@user_name@}</b> wants to follow you. Click on the link below to learn more', array("user_name" => $me["username"])),
+                    "subscribe_accept" => cl_translate('User <b>@{@user_name@}</b> accepted your follow request. Click on the link below to learn more', array("user_name" => $me["username"])),
+                    "mention" => cl_translate('User <b>@{@user_name@}</b> mentioned you in a post.', array("user_name" => $me["username"])),
+                    "like" => cl_translate('User <b>@{@user_name@}</b> liked your post.', array("user_name" => $me["username"])),
+                    "repost" => cl_translate('User <b>@{@user_name@}</b> shared your publication.', array("user_name" => $me["username"])),
+                    "visit" => cl_translate('User <b>@{@user_name@}</b> visited your profile.', array("user_name" => $me["username"])),
                     "ad_approval" => cl_translate('Congratulations! Your add has been approved. Click on the link below to learn more'),
-                    "comment" => cl_translate(' <p>{@message@}</p> User <b>@{@user_name@}</b> sent you a message. Click on the link below to learn more', array("user_name" => $me["name"], "message" => array_key_exists("message", $data) ? $data["message"] : ""))
+                    "comment" => cl_translate(' <p>{@message@}</p> User <b>@{@user_name@}</b> sent you a message. Click on the link below to learn more', array("user_name" => $me["username"], "message" => array_key_exists("message", $data) ? $data["message"] : ""))
                 ),
                 "button_text" => array(
                     "verified" => cl_translate('Visit my account'),
