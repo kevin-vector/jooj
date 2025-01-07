@@ -35,9 +35,6 @@ else if ($action == 'load_more') {
             $data['status'] = 200;
             $data['html']   = implode("", $html_arr);
         }
-        else {
-            $data['status'] = $offset;
-        }
     }
     
 }
