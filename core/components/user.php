@@ -1817,7 +1817,7 @@ function cl_notify_user($data = array()) {
             );
             
             if (in_array($data['subject'], array('subscribe_request'))) {
-                $cl['enotif_data']['url'] = cl_link(cl_strf("%s/follow_requests", $me['name']));
+                $cl['enotif_data']['url'] = cl_link(cl_strf("%s/follow_requests", $me['username']));
             }
 
             if (in_array($data['subject'], array('reply', 'repost', 'like', 'mention'))) {
@@ -1829,7 +1829,7 @@ function cl_notify_user($data = array()) {
             }
 
             else if ($data['subject'] == "comment") {
-                $cl['enotif_data']['url'] = cl_link(cl_strf("conversation/%s", $me['name']));
+                $cl['enotif_data']['url'] = cl_link(cl_strf("conversation/%s", $me['username']));
             }
             
             $send_email_data = array(
