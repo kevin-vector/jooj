@@ -4706,6 +4706,15 @@ body
   div.publisher-info
   div.lp {
     display: flex;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    margin-left: 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-left: 1px;
+    font-size: 15px;
 }
 body
   main.main-content-container
