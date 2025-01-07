@@ -4691,7 +4691,22 @@ body
   align-items: center;
   color: var(--smc-main-text-color-2);
 }
-
+body
+  main.main-content-container
+  div.main-content-container-inner
+  div.timeline-container-wrapper
+  div.timeline-container-inner
+  div.timeline-container
+  div.timeline-posts-container
+  div.timeline-posts-ls
+  div.post-list-item
+  div.post-list-item-content
+  div.publication-data
+  div.publication-data-inner
+  div.publisher-info
+  div.lp {
+    display: flex;
+}
 body
   main.main-content-container
   div.main-content-container-inner
@@ -39867,29 +39882,6 @@ body
   div.post-list-item-content
   div.publication-data
   div.publication-data-inner
-  div.publisher-info {
-  width: 100%;
-  line-height: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--smc-main-text-color-2);
-}
-
-body
-  main.main-content-container
-  div.main-content-container-inner
-  div.timeline-container-wrapper
-  div.timeline-container-inner
-  div.timeline-container
-  div.timeline-posts-container
-  div.timeline-posts-ls
-  div.post-list-item
-  div.post-list-item-content
-  div.publication-data
-  div.publication-data-inner
   div.publisher-info
   div.lp
   a {
@@ -42070,22 +42062,6 @@ body
   div.timeline-posts-ls
   div.post-list-item.post-ad-item:focus {
   background: inherit;
-}
-
-body
-  main.main-content-container
-  div.main-content-container-inner
-  div.timeline-container-wrapper
-  div.timeline-container-inner
-  div.timeline-container
-  div.timeline-posts-container
-  div.timeline-posts-ls
-  div.post-list-item.post-ad-item
-  div.post-list-item-content
-  div.publication-data
-  div.publication-data-inner
-  div.publisher-info {
-  align-items: flex-start;
 }
 
 body
@@ -64874,26 +64850,6 @@ body.cl-app-thread
   width: 100%;
   display: block;
   line-height: 0px;
-}
-
-body.cl-app-thread
-  main.main-content-container
-  div.main-content-container-inner
-  div.timeline-container
-  div.publication--thread-container
-  div.publication--thread-container-inner
-  div.publication--thread-data-holder
-  div.publication-data
-  div.publication-data-inner
-  div.publisher-info {
-  width: 100%;
-  line-height: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
 }
 
 body.cl-app-thread
