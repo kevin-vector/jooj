@@ -2188,6 +2188,35 @@ else if($action == 'delete_post_page') {
                     
                     $data['status'] = 200;
                 }
+                
+                else {
+                    $post_owner = cl_raw_user_data($post_data['user_id']);
+
+                    if (not_empty($post_owner)) {
+                        if ($post_data['target'] == 'publication') {
+
+                            $data['posts_total'] = ($post_owner['posts'] -= 1);
+                            $data['posts_total'] = ((is_posnum($data['posts_total'])) ? $data['posts_total'] : 0);
+
+                            cl_update_user_data($post_data['user_id'], array(
+                                'posts' => $data['posts_total']
+                            ));
+
+                            $db = $db->where('publication_id', $post_id);
+                            $qr = $db->delete(T_POSTS);
+                        }
+
+                        else {
+                            $data['url'] = cl_link(cl_strf("thread/%d", $post_data['thread_id']));
+
+                            cl_update_thread_replys($post_data['thread_id'], 'minus');
+                        }
+                        
+                        cl_recursive_delete_post($post_id);
+                        
+                        $data['status'] = 200;
+                    }
+                }
             }
         }
     }
