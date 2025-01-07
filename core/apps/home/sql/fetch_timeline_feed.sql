@@ -10,9 +10,11 @@
 @*************************************************************************@
  */
 
-SELECT posts.`id` as offset_id, posts.`publication_id`, posts.`type`, posts.`user_id`, posts.`comment_on` FROM `<?php echo($data['t_posts']); ?>` posts		/* edited by kevin to fetch comment on */
+SELECT * FROM `<?php echo($data['t_pubs']); ?>` pubs
 	
-	INNER JOIN `<?php echo($data['t_pubs']); ?>` pubs ON posts.`publication_id` = pubs.`id`
+	INNER JOIN (SELECT `id` as offset_id, `publication_id`, `type`, `user_id`, `comment_on` FROM `<?php echo($data['t_posts']); ?>`
+	union all 
+	SELECT `id` as offset_id, `publication_id`, `type`, `user_id`, `comment_on` FROM cl_posts_symbol) AS posts on pubs.id = posts.publication_id
 
 	WHERE pubs.`status` = 'active'
 
@@ -20,7 +22,7 @@ SELECT posts.`id` as offset_id, posts.`publication_id`, posts.`type`, posts.`use
 
 	AND (posts.`publication_id` NOT IN (SELECT `post_id` FROM `<?php echo($data['t_reports']); ?>` WHERE `user_id` = <?php echo($data['user_id']); ?>))
 
-	ORDER BY posts.`time` DESC
+	ORDER BY pubs.`time` DESC
 
 <?php if($data['limit']): ?>
 	LIMIT <?php echo($data['limit']); ?>
