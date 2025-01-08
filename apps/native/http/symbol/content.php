@@ -24,10 +24,10 @@ if (empty($cl['prof_user'])) {
 
 require_once(cl_full_path("core/apps/symbol/app_ctrl.php"));
 
-$cl["page_title"]  = cl_strf('%s %s%s%s', $cl['prof_user']['name'], '($', $cl['prof_user']['username'], ')');
-$cl["page_desc"]   = $cl['prof_user']['about'];
+$cl["page_title"]  = cl_strf('%s (%s) Coin, Real-Time Updates - Cointweets', $cl['prof_user']['name'], $cl['prof_user']['username']);
+$cl["page_desc"]   = cl_strf('Follow %s (%s) coin tweets, updates, laetst community messages, news, and more', $cl['prof_user']['name'], $cl['prof_user']['username']);
 $cl["page_img"]    = $cl['prof_user']['avatar'];
-$cl["page_kw"]     = $cl["config"]["keywords"];
+$cl["page_kw"]     = $cl['prof_user']['name'].", $".$cl['prof_user']['username'].", ".$cl['prof_user']['username'].", ".$cl["config"]["keywords"];
 $cl["pn"]          = "symbol";
 $cl["page_xdata"]  = array();
 $cl["sbr"]         = true;

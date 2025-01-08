@@ -29,18 +29,38 @@ if (not_empty($cl["search_query"])) {
 
 if ($cl["page_tab"] == 'htags') {
 	$cl["query_result"] = cl_search_hashtags($cl["search_query"], false, 30);
+	if(not_empty($cl["search_query"])) {
+		$cl["page_title"]   = cl_strf('Explore %s-related hashtags - Cointweets', $cl["search_query"]);
+		$cl["page_desc"]    = cl_strf('Find out recent hashtags on %s and more', $cl["search_query"]);
+		$cl["page_kw"]      = $cl["search_query"].", hashtags, ".$cl["config"]["keywords"];
+	}
 }
 else if ($cl["page_tab"] == 'symbols') {
 	// $cl["query_result"] = cl_search_symbols($cl["search_query"], false, 30);		/* edited by kevin. New Update. to show coins */
 	$cl["query_result"] = cl_search_page($cl["search_query"], false, 30);
+	if(not_empty($cl["search_query"])) {
+		$cl["page_title"]   = cl_strf('Explore %s-related crypto coins - Cointweets', $cl["search_query"]);
+		$cl["page_desc"]    = cl_strf('Find out recent crypto coins on %s and more', $cl["search_query"]);
+		$cl["page_kw"]      = $cl["search_query"].", ".$cl["config"]["keywords"];
+	}
 }
 else if($cl["page_tab"] == 'people') {
 	$cl["query_result"] = cl_search_people($cl["search_query"], false, 30);
 	// $cl["query_result"] = cl_search_page($cl["search_query"], false, 30);	/* edited by Kevin removed because it doesn't get people */
+	if(not_empty($cl["search_query"])) {
+		$cl["page_title"]   = cl_strf('Discover enthusiasts interested in %s on Cointweets', $cl["search_query"]);
+		$cl["page_desc"]    = cl_strf('Find out recent people on %s and more', $cl["search_query"]);
+		$cl["page_kw"]      = $cl["search_query"].", enthusiasts, people, ".$cl["config"]["keywords"];
+	}
 }
 
 else {
 	$cl["query_result"] = cl_search_posts($cl["search_query"], false, 30);
+	if(not_empty($cl["search_query"])) {
+		$cl["page_title"]   = cl_strf('Explore %s-related posts - Cointweets', $cl["search_query"]);
+		$cl["page_desc"]    = cl_strf('Find out recent posts on %s and more', $cl["search_query"]);
+		$cl["page_kw"]      = $cl["search_query"].", posts, ".$cl["config"]["keywords"];
+	}
 }
 
 $cl["http_res"] = cl_template("explore/content");

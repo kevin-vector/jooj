@@ -11,9 +11,9 @@
 
 	require_once(cl_full_path("core/apps/coins/app_ctrl.php"));
 
-	$cl["page_title"] = cl_translate("Coins");
-	$cl["page_desc"]  = $cl["config"]["description"];
-	$cl["page_kw"]    = $cl["config"]["keywords"];
+	$cl["page_title"] = "The list of current crypto coins on Cointweets";
+	$cl["page_desc"]  = "Discover the latest trending crypto coins and more on Cointweets";
+	$cl["page_kw"]    = "coins, ".$cl["config"]["keywords"];
 	$cl["pn"]         = "coins";
 	$cl["sbr"]        = true;
 	$cl["sbl"]        = true;
