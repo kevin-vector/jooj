@@ -471,8 +471,9 @@ div.main-search-bar-container form div.input-holder span.clear-result svg {
   display: flex;
   align-items: center;
 }
-.publication-data{
+.publication-data {
   flex: 1;
+  width: 100%;
 }
 .text-gray-900 svg{
   stroke: var(--smc-main-text-color-2);
@@ -11859,6 +11860,11 @@ body div.modal.info-popup-modal div.modal-body p {
   padding: 0;
   margin: 0;
   text-align: center;
+}
+
+body div.modal.info-popup-modal div.modal-body p svg {
+  justify-self: center;
+  fill: var(--smc-main-text-color-2);
 }
 
 body div.modal.info-popup-modal div.modal-footer {
@@ -45915,31 +45921,6 @@ body div.modal.confirm-actions-modal div.modal-dialog div.modal-body p {
   margin: 0;
   text-align: center;
 }
-
-
-body div.modal.info-popup-modal div.modal-body {
-  padding: 20px !important;
-}
-
-body div.modal.info-popup-modal div.modal-body h4 {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 26px;
-  padding: 0;
-  margin: 0 0 10px 0;
-  color: var(--smc-main-text-color);
-  text-align: center;
-}
-
-body div.modal.info-popup-modal div.modal-body p {
-  font-size: 13px;
-  line-height: 30px;
-  color: var(--smc-main-text-color-2);
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
 
 body div.modal.share-post-modal div.social-media-links {
   display: flex;
