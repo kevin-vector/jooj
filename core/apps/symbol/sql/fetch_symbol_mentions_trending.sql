@@ -6,7 +6,7 @@
 
     LEFT JOIN `<?php echo($data['t_posts']); ?>` posts ON pubs.`time`=posts.`time`
 
-    WHERE pubs.`text` LIKE "%<?php echo($data['symbol_name']); ?>%"
+    WHERE pubs.`text` LIKE "%$<?php echo($data['symbol_name']); ?>%"
 
     AND CAST(pubs.`time` AS UNSIGNED) >= UNIX_TIMESTAMP(NOW() - INTERVAL 7 DAY)
 
