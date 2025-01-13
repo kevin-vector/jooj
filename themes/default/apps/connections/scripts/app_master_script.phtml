@@ -37,7 +37,6 @@
 			},
 			accept_request: function(id = false) {
 				var people_ls = _app.find('div[data-an="connectivity-list"]');
-
 				if ($.isNumeric(id)) {
 					$.ajax({
 						url: "<?php echo cl_link("native_api/connections/accept_request"); ?>",
@@ -52,6 +51,7 @@
 							});
 						}
 					}).done(function(data) {
+
 						if (data.status != 200) {
 							SMColibri.errorMSG();
 						}

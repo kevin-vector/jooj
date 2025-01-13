@@ -103,7 +103,7 @@ else if ($action == 'save_profile_info') {
         $data['progstat']       = $me["start_up"];
 
         cl_update_user_data($me["id"], array(
-            'fname'      => cl_text_secure($user_data_fields['fname']),
+            'fname'      => ucfirst(cl_text_secure($user_data_fields['fname'])),
             'about'      => cl_text_secure($user_data_fields['bio']),
             'country_id' => cl_text_secure($user_data_fields['country']),
             'gender'     => cl_text_secure($user_data_fields['gender']),

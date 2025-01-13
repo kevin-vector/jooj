@@ -4713,7 +4713,7 @@ body
     margin-left: 0px;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-left: 1px;
     font-size: 15px;
 }
