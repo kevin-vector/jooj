@@ -2573,7 +2573,7 @@ else if($action == 'search') {
     
     $data['err_code'] = 0;
     $data['status']   = 400;
-    $search_query     = fetch_or_get($_GET['query'], false); 
+    $search_query     = fetch_or_get($_GET['query'], false);
     $type             = fetch_or_get($_GET['type'], false);
     $data['html']   = cl_template('main/includes/search/no_result');
 
@@ -2598,14 +2598,25 @@ else if($action == 'search') {
         else if ($type == "symbols") {
             $search_query = cl_text_secure($search_query);
             $search_query = cl_croptxt($search_query, 32);
+            $page_result = cl_search_page($search_query, false, 150);
             $query_result = cl_search_symbols($search_query, false, 150);
             $html_arr     = array();
 
+            if (not_empty($page_result)) {
+                $html_arr[] = '<div class="px-2.5 text-[14px] font-semibold pt-3">Coins</div>';
+                foreach ($page_result as $cl['li']) {
+                    $html_arr[] = cl_template('main/includes/search/pages_li');
+                }
+            }
+
             if (not_empty($query_result)) {
+                $html_arr[] = '<div class="px-2.5 text-[14px] font-semibold pt-3">Symbols</div>';
                 foreach ($query_result as $cl['li']) {
                     $html_arr[] = cl_template('main/includes/search/symbols_li');
                 }
+            }
 
+            if (not_empty($html_arr)) {
                 $data['status'] = 200;
                 $data['html']   = implode("", $html_arr);
             }
