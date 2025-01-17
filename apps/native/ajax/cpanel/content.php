@@ -863,7 +863,7 @@ else if($action == "update_sitemap") {
 		}
 
 		if($maps > 1) {
-			$cl['map_indexes'] = $maps;
+			$cl['map_indexes'] = $maps - 1;
 			$sitemap_index     = cl_sitemap('temps/index');
 			$sitemap_index     = trim($sitemap_index);
 			$sitemap_index     = str_replace("{%xml_version%}", '<?xml version="1.0" encoding="UTF-8"?>', $sitemap_index);
