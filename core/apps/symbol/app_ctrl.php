@@ -9,7 +9,7 @@
 # @ Copyright (c) 2020 - 2023 JOOJ Talk. All rights reserved.               @
 # @*************************************************************************@
 
-function cl_get_profile_posts($symbol_id = false, $limit = 30, $offset = false) {
+function cl_get_symbol_posts($symbol_id = false, $limit = 30, $offset = false) {
     global $db, $cl, $me;
 
     if (not_num($symbol_id)) {
@@ -131,7 +131,7 @@ function cl_get_profile_posts($symbol_id = false, $limit = 30, $offset = false) 
     return $data;
 }
 
-function cl_get_profile_posts_trending($symbol_id = false, $limit = 30, $offset = false) {
+function cl_get_symbol_posts_trending($symbol_id = false, $limit = 30, $offset = false) {
     global $db, $cl, $me, $se;
 
     if (not_num($symbol_id)) {
@@ -254,7 +254,7 @@ function cl_get_profile_posts_trending($symbol_id = false, $limit = 30, $offset 
 }
 
 
-function cl_get_profile_likes($symbol_id = false, $limit = 30, $offset = false) {
+function cl_get_symbol_likes($symbol_id = false, $limit = 30, $offset = false) {
 	global $db, $cl;
 
 	if (not_num($symbol_id)) {
@@ -280,7 +280,7 @@ function cl_get_profile_likes($symbol_id = false, $limit = 30, $offset = false) 
 	return $data;
 }
 
-function cl_can_view_profile($symbol_id = false) {
+function cl_can_view_symbol($symbol_id = false) {
 	global $db, $cl;
 
 	if (not_num($symbol_id)) {

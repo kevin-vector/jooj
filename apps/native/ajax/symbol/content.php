@@ -21,9 +21,9 @@ if ($action == 'load_more') {
 
     $data['offset'] = $offset;
 
-    if (is_posnum($prof_id) && is_posnum($offset) && cl_can_view_profile($prof_id)) { 	
+    if (is_posnum($prof_id) && is_posnum($offset) && cl_can_view_symbol($prof_id)) { 	
     	if (in_array($type, array('posts'))) {
-            $posts_ls   = cl_get_profile_posts($prof_id, 30, $offset);
+            $posts_ls   = cl_get_symbol_posts($prof_id, 30, $offset);
 
             if (not_empty($posts_ls)) {
                 foreach ($posts_ls as $cl['li']) {
@@ -35,8 +35,8 @@ if ($action == 'load_more') {
             }
         }
         else {
-            if (cl_can_view_profile($prof_id)) {
-                $posts_ls = cl_get_profile_posts_trending($prof_id, 30, $offset);
+            if (cl_can_view_symbol($prof_id)) {
+                $posts_ls = cl_get_symbol_posts_trending($prof_id, 30, $offset);
 
                 if (not_empty($posts_ls)) {
                     foreach ($posts_ls as $cl['li']) {

@@ -26,7 +26,7 @@ if (empty($cl['prof_user'])) {
 
 else {
 
-	$cl['can_view']   = cl_can_view_profile($cl['prof_user']['id']);
+	$cl['can_view']   = cl_can_view_symbol($cl['prof_user']['id']);
 	$cl["page_title"] = $cl['prof_user']['name'];
 	$cl["page_desc"]  = $cl['prof_user']['about'];
 	$cl["page_kw"]    = $cl["config"]["keywords"];
