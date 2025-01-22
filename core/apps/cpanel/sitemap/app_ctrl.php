@@ -57,7 +57,7 @@ function cl_admin_get_coin_indexes() {
 
 	if (cl_queryset($coins)) {
 		foreach ($coins as $row) {
-			$data[] = cl_link(cl_strf("symbol/%d", $row['username']));
+			$data[] = cl_link(cl_strf("symbol/%s", $row['username']));
 		}
 	}
 
