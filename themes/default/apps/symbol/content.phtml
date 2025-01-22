@@ -578,6 +578,11 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script type="text/javascript">
+	// Initialise Carousel
+	const cardSlider = new Carousel(document.querySelector("#cardSlider"), {
+		Dots: false,
+		itemtsToShow: 5,
+	});
 	var state = "posts";
 
 	select = (pane) => {
@@ -773,11 +778,6 @@
 				<?php endif; ?></p> `,
 			placement: 'bottom'
 		});
-	});
-	
-	// Initialise Carousel
-	const cardSlider = new Carousel(document.querySelector("#cardSlider"), {
-		Dots: false,
 	});
 </script>
 <style>

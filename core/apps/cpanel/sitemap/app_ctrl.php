@@ -48,6 +48,19 @@ function cl_admin_get_user_indexes() {
 	return $data;
 }
 
+function cl_admin_get_coin_indexes() {
+	global $db;
 
+	$db    = $db->where('active', '1');
+	$db    = $db->orderBy('joined','DESC');
+	$coins = $db->get(T_SYMBOLS, null, array('username'));
+	$data  = array();
 
-	
+	if (cl_queryset($coins)) {
+		foreach ($coins as $row) {
+			$data[] = cl_link(cl_strf("symbol/%d", $row['id']));
+		}
+	}
+
+	return $data;
+}

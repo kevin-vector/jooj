@@ -803,6 +803,7 @@ else if($action == "update_sitemap") {
 		$maps     = 1;
 		$posts    = cl_admin_get_publication_indexes();
 		$users    = cl_admin_get_user_indexes();
+		$coins    = cl_admin_get_coin_indexes();
 
 		
 
@@ -842,6 +843,30 @@ else if($action == "update_sitemap") {
 			$users = array_chunk($users, 1000);
 
 			foreach ($users as $cl['sitemap_entries']) {
+				$map_url  = cl_strf("sitemap/maps/sitemap-%d.xml", $maps);
+				$map_code = cl_sitemap('temps/sitemap');
+				$map_code = trim($map_code);
+				$map_code = str_replace("{%xml_version%}", '<?xml version="1.0" encoding="UTF-8"?>', $map_code);
+				$exe_code = file_put_contents($map_url, $map_code);
+
+				if ($exe_code) {
+					$maps += 1;
+				}
+
+				else {
+					$data['errors'][] = array(
+						'file_index' => $maps,
+						'file_path' => $map_url,
+						'message' => "Failed to save sitemap file."
+					);
+				}
+			}
+		}
+
+		if (not_empty($coins)) {
+			$coins = array_chunk($coins, 1000);
+
+			foreach ($coins as $cl['sitemap_entries']) {
 				$map_url  = cl_strf("sitemap/maps/sitemap-%d.xml", $maps);
 				$map_code = cl_sitemap('temps/sitemap');
 				$map_code = trim($map_code);
